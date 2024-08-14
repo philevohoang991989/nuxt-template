@@ -1,14 +1,23 @@
 <template>
   <div class="grid items-start h-screen lg:flex">
     <SideBar />
-    <div>
+    <div class="w-full">
       <header
-        class="bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50 lg:mb-0 lg:border-0"
+        class="h-[60px] w-full flex justify-between items-center border-b border-gray-200 dark:border-gray-800 px-4 gap-x-4 min-w-0"
       >
-        <div
-          class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between gap-3 h-[--header-height]"
-        >
-          <div class="relative inline-flex text-left rtl:text-right"></div>
+        <h1>Settings</h1>
+        <div class="flex gap-2">
+          <UButton class="p-2 rounded-full bg-transparent">
+            <Icon
+              name="iconify i-heroicons:bell"
+              class="h-5 w-5 flex-shrink-0 text-white z-50"
+          /></UButton>
+          <UButton class="p-2 rounded-full">
+            <Icon
+              name="i-heroicons:plus"
+              class="h-5 w-5 flex-shrink-0 text-gray-800 z-50"
+            />
+          </UButton>
         </div>
       </header>
       <slot />

@@ -1,18 +1,39 @@
 <template>
-  <div
-    class="w-[250px] h-screen flex-col items-stretch relative border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-gray-800 flex-shrink-0 hidden lg:flex"
-  >
-    <NuxtLink to="/" exact-active-class="active">
-      <span>Home page</span>
-    </NuxtLink>
-    <NuxtLink to="/about" exact-active-class="active">
-      <span>About page</span>
-    </NuxtLink>
+  <div class="relative">
+    <div
+      class="z-50 flex items-center justify-between w-full h-full p-4 lg:hidden"
+    >
+      <Logo />
+      <Icon
+        class="z-50 cursor-pointer left-2 top-2 text-black"
+        size="30"
+        name="iconamoon:menu-burger-horizontal"
+        @click="open = true"
+      />
+      <div
+        v-if="open"
+        class="absolute top-0 left-0 z-50 w-full h-screen bg-white"
+      >
+        <Icon
+          class="absolute z-50 cursor-pointer right-4 top-4 text-black"
+          size="30"
+          name="material-symbols:close"
+          @click="open = false"
+        />
+        <SideBarMenu />
+      </div>
+    </div>
+    <div
+      class="hidden lg:flex w-[250px] h-screen flex-col justify-between border-r border-gray-800"
+    >
+      <SideBarMenu />
+      <div>UserItem</div>
+    </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+const open = ref(true);
 </script>
 
 <style lang="scss" scoped></style>
