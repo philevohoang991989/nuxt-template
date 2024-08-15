@@ -1,5 +1,5 @@
 <template>
-  <div class="grid items-start h-screen lg:flex">
+  <div class="grid items-start h-screen lg:flex bg-[#0f172a]">
     <SideBar />
     <div class="w-full">
       <header
@@ -24,3 +24,6 @@
     </div>
   </div>
 </template>
+<style>
+
+</style>
